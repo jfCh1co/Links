@@ -51,7 +51,7 @@ ul {
    ========================================= */
 .links {
     /* Gradiente forte de azul para roxo */
-    background: linear-gradient(180deg, #020ce8 0%, #4600a8 100%);
+    background: linear-gradient(180deg, #020ee892 0%, #4600a8b1 100%);
     border-radius: 8px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     
@@ -74,13 +74,13 @@ ul {
 }
 
 /* =========================================
-   TEXTOS (Título Preto e Rodapé)
+   TEXTOS (Título Branco e Rodapé)
    ========================================= */
 h1 {
     font-size: 3.2rem;
     font-weight: 900;
     text-align: center;
-    color: #000000; /* Preto sólido */
+    color: #fdfdfd;
     line-height: 1.05;
     margin: 0 0 1rem 0;
     letter-spacing: -1px;
