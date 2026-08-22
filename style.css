@@ -1,0 +1,178 @@
+/* =========================================
+   RESETS E BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0616; /* NOVO: Fundo cinza/azul escuro da imagem */
+    color: #f5f7fb;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   FUNDO INTERATIVO (Onde o mouse passa)
+   ========================================= */
+.fundo-interativo {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    
+    /* MANTIDO: O brilho que segue as variáveis do JS */
+    background: radial-gradient(
+        600px circle at var(--x, 50%) var(--y, 50%), 
+        rgba(255, 255, 255, 0.08), /* Brilho sutil branco para não brigar com o fundo */
+        transparent 40%
+    );
+}
+
+/* =========================================
+   CARTÃO PRINCIPAL (NOVO: Estilo da Imagem)
+   ========================================= */
+.links {
+    /* Gradiente forte de azul para roxo */
+    background: linear-gradient(180deg, #020ce8 0%, #4600a8 100%);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    max-width: 450px;
+    width: 100%;
+    min-height: 550px;
+    padding: 3.5rem 2rem 2rem 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    
+    transition: transform 0.3s ease;
+}
+
+.links:hover {
+    transform: translateY(-5px); 
+}
+
+/* =========================================
+   TEXTOS (Título Preto e Rodapé)
+   ========================================= */
+h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    text-align: center;
+    color: #000000; /* Preto sólido */
+    line-height: 1.05;
+    margin: 0 0 1rem 0;
+    letter-spacing: -1px;
+}
+
+/* O copyright (Texto branco simples como na imagem) */
+span {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* =========================================
+   ANIMAÇÃO INDIVIDUAL POR BOTÃO (Sanfona)
+   ========================================= */
+.texto-link {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.imagem-link {
+    width: 100%;
+    height: 0; 
+    opacity: 0;
+    overflow: hidden; 
+    transition: height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+}
+
+.imagem-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.botao-expansivel:hover .imagem-link {
+    height: 120px; /* Expande a imagem no hover */
+    opacity: 1;
+    margin-top: 15px; 
+}
+
+/* =========================================
+   BOTÕES DE LINKS (Escuros com borda branca)
+   ========================================= */
+.links ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; 
+}
+
+.links ul li a {
+    /* Mudamos para flex-column para o texto ficar em cima e a imagem embaixo */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 85px; /* Garante que fique retangular alto como na imagem */
+    padding: 1.2rem;
+    text-align: center;
+    
+    /* Cores da imagem */
+    background-color: #0c082a; 
+    border: 1px solid #ffffff; 
+    border-radius: 6px; 
+    color: #ffffff; 
+    
+    transition: all 0.3s ease; 
+}
+
+.links ul li a:hover {
+    background-color: #1a1447; /* Clareia levemente no hover */
+    transform: translateY(-4px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    
+    .links {
+        padding: 2.5rem 1.5rem;
+        min-height: auto; 
+    }
+
+    .fundo-interativo { padding: 1.5rem; }
+}
